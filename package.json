@@ -1,0 +1,9 @@
+{
+  "name": "daap-wp-integration",
+  "private": true,
+  "scripts": {
+    "build": "cd ../.. && NODE_OPTIONS=--max-old-space-size=4096 node_modules/.bin/vite build --config integration/wp/vite.config.ts",
+    "dev": "cd ../.. && node_modules/.bin/vite build --watch --config integration/wp/vite.config.ts",
+    "serve": "cd ../.. && npx http-server dist"
+  }
+}

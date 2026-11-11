@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      @keyframes pulse {
+        0% { transform: scale(0.9); }
+        30% { transform: scale(1); }
+        100% { transform: scale(0.9); }
+      }
+    </style>
+    <script>
+      if (!window.WebSlider_GlobalScope) {
+        window.WebSlider_GlobalScope = {};
+      }
+      // Logger levels — All=0, Trace=10, Debug=20, Info=30, Warn=50, Error=60, Fatal=70, None=100
+      window.WebSlider_GlobalScope.loggerLevel = {
+        app: %VITE_APP_LOGGER_LEVEL_APP%,
+        player: %VITE_APP_LOGGER_LEVEL_PLAYER%,
+        object: %VITE_APP_LOGGER_LEVEL_OBJECT%,
+        animation: %VITE_APP_LOGGER_LEVEL_ANIMATION%,
+        sdk: %VITE_APP_LOGGER_LEVEL_SDK%,
+      };
+    </script>
+    <script type="module" src="../../src/index.tsx"></script>
+    <title>DAAP</title>
+  </head>
+  <body style="padding: 0; margin: 0">
+    <div style="position: relative" id="daap-forcerefresh-root">
+      <div
+        style="
+          background-color: #232323;
+          color: #ddd;
+          height: 100vh;
+          width: 100vw;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 20px;
+          font-family: &quot;Courier New&quot;, Courier, monospace;
+        "
+      >
+        <p
+          style="
+            font-size: 20px;
+            font-family: &quot;Courier New&quot;, Courier, monospace;
+            animation: pulse 2s infinite;
+          "
+        >
+          DAAP <br />Loading ...<br />
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

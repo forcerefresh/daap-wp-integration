@@ -1,0 +1,12 @@
+import axios from "axios";
+
+export const usePublicTemplate = () => {
+  const getPublicTemplate = (id: string, lang: string): Promise<any> => {
+    return axios
+      .get(`${import.meta.env.VITE_SAAS_API_URL}/public/public-templates/${id}?language=${lang}`)
+      .then((response) => response.data)
+      .catch(console.log);
+  };
+
+  return { getPublicTemplate };
+};
